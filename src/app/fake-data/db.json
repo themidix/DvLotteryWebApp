@@ -1,0 +1,199 @@
+{
+  "customer": [
+    {
+      "nom": "Ntoya",
+      "postnom": "Kisimbila",
+      "prenom": "nana",
+      "villeNais": "kinshasa",
+      "dateNais": "1989-03-03",
+      "sexe": "Femme",
+      "profession": "Avocat",
+      "niveauEtude": "Master",
+      "paysAd": "RDC",
+      "picture": null,
+      "villeRes": "kinshasa",
+      "email": "kinsilbila@gmail.com",
+      "tel": "0825565423",
+      "etatCivil": "Célibataire",
+      "conjoint": {
+        "nom": null,
+        "postnom": null,
+        "prenom": null,
+        "nationalité": null,
+        "sexe": null,
+        "dateNais": null,
+        "profession": null,
+        "niveauEtude": null,
+        "picture": ""
+      },
+      "exemptationPas": "ressortissant d'un pays communiste",
+      "passport": {
+        "nom": "ntoya",
+        "postnom": "kisimbila",
+        "prenom": "nana",
+        "pays": "RDC",
+        "dateDel": "2022-08-30",
+        "dateEx": "2023-09-07",
+        "numeroPas": 1008,
+        "Exemptation": "Non",
+        "typeExemptation": "ressortissant d'un pays communiste"
+      },
+      "residence": {
+        "commune": "masina",
+        "quartier": "sans-fil",
+        "avenue": "kingabwa",
+        "numeroRes": 78,
+        "villeRes": "kinshasa",
+        "paysRes": "RDC"
+      },
+      "nomAgent": "Musau Ngoy Daniel",
+      "id": 1
+    },
+    {
+      "nom": "Mbemba",
+      "postnom": "Mbemba",
+      "prenom": "Marcel",
+      "villeNais": "goma",
+      "dateNais": "2022-09-24",
+      "sexe": "Homme",
+      "profession": "auteur",
+      "niveauEtude": "Graduat",
+      "paysAd": "",
+      "picture": "",
+      "villeRes": "",
+      "email": "marcel15@gmail.com",
+      "tel": "0255555",
+      "etatCivil": "Célibataire",
+      "conjoint": {
+        "nom": "",
+        "postnom": "",
+        "prenom": "",
+        "nationalité": "",
+        "sexe": "",
+        "dateNais": "",
+        "profession": "",
+        "niveauEtude": "",
+        "picture": ""
+      },
+      "exemptationPas": "apatride",
+      "passport": {
+        "nom": "",
+        "postnom": "",
+        "prenom": "",
+        "pays": "",
+        "dateDel": "",
+        "dateEx": "",
+        "numeroPas": 0,
+        "Exemptation": "Oui",
+        "typeExemptation": "apatride"
+      },
+      "residence": {
+        "commune": "",
+        "quartier": "",
+        "avenue": "",
+        "numeroRes": 0,
+        "villeRes": "",
+        "paysRes": ""
+      },
+      "nomAgent": "Musau Ngoy Daniel",
+      "id": 2
+    }
+  ],
+  "agent": [
+    {
+      "id": 1,
+      "nom": "Emil Lukongi",
+      "email": "emillukongi@gmail.com",
+      "tel": "0820546523",
+      "sexe": "Femme",
+      "ville": "Lubumbashi",
+      "dateEmb": "2022-05-02",
+      "fonction": "Administrator",
+      "statut": "Actif",
+      "passWord": "ebenEzer"
+    },
+    {
+      "id": 2,
+      "nom": "Mutanda David",
+      "email": "mutanda@gmail.com",
+      "tel": "0826226223",
+      "sexe": "Homme",
+      "ville": "Kinshasa",
+      "dateEmb": "2022-09-05",
+      "fonction": "Administrator",
+      "statut": "Actif",
+      "passWord": "fraternel"
+    },
+    {
+      "id": 3,
+      "nom": "Musau Ngoy Daniel",
+      "email": "danielngoy@gmail.com",
+      "tel": "023850556233",
+      "sexe": "Homme",
+      "ville": "Goma",
+      "dateEmb": "2022-06-17",
+      "fonction": "Administrator",
+      "statut": "Actif",
+      "passWord": "aphorisme"
+    }
+  ],
+  "session": [
+    {
+      "id": 2,
+      "nom": "Mutanda David",
+      "email": "mutanda@gmail.com",
+      "tel": "0826226223",
+      "sexe": "Homme",
+      "ville": "Kinshasa",
+      "dateEmb": "2022-09-05",
+      "fonction": "Administrator",
+      "statut": "Actif",
+      "passWord": "fraternel"
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    }
+  ]
+}

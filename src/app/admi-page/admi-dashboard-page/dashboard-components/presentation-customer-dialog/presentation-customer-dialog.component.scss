@@ -1,0 +1,170 @@
+.container{
+  min-width: 700px;
+  max-height: 490px;
+  overflow-y: scroll;
+  align-content: center;
+  padding: 0 3%;
+}
+
+.first-section{
+  display: flex;
+  overflow: hidden;
+}
+
+.image-section img{
+  width: 250px;
+}
+.details-personnel{
+  padding: 1% 5% 0 5%;
+
+}
+
+.first-section .fields {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 50% 50% ;
+
+
+  width: 90%;
+}
+
+.input-field{
+  margin-left: 5px;
+}
+
+.input-field label{
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input, .select{
+  background: rgba(255,255,255, 0.2);
+  outline: none;
+  font-size: 15px;
+  font-weight: 400;
+  color: black;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0, 0.2);
+  padding: 0 15px;
+
+  height: 42px;
+  margin: 8px 0px;
+  font-family: JosefinSans;
+  transition: all 0.3s linear;
+  width: 220px;
+}
+.input-field input::placeholder{
+  color: #333;
+}
+
+.input-field input:focus,
+.input-field select:focus{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+  border: 1px solid #DE2E4B;
+
+}
+.input-field select,
+.input-field input[type="date"]{
+  color: #333;
+}
+.input-field input[type="date"]:valid{
+  color: black;
+}
+
+.input-field input,
+.input-field select{
+  color: black;
+  font-weight: 400;
+}
+
+.input-field input:disabled,
+.input-field select:disabled{
+  border: none;
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(0deg, #000000, #848e99);
+  border-radius: 10px;
+}
+
+.title{
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.details-personnel{
+  width: 600px;
+}
+
+form button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  max-width: 150px;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 10px;
+  margin: 15px 15px 0 0;
+  background-color: #DE2E4B;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+form .btnText{
+  font-size: 14px;
+  font-weight: 400;
+
+}
+form button:hover{
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0, 0.2);
+  color: #333;
+}
+form button i {
+  margin: 0 6px;
+}
+
+form .buttons{
+  display: flex;
+  align-items: center;
+}
+form .buttons button {
+  margin-right: 14px;
+}
+
+.dropBoxSection{
+  width: 180px;
+}
+.radio{
+
+  width: 100%;
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.radio .radio-field{
+
+  overflow: hidden;
+  text-align: justify;
+  border: 1px solid rgba(0,0,0, 0.2);
+  border-radius: 10px;
+  background: rgba(255,255,255, 0.1);
+  padding: 10px;
+  margin: 5px 0 10px 0;
+
+}
+
+.radio .radio-field label{
+  padding: 0 5%;
+  line-height: 1.2;
+  color: #333;
+}
+
+.radio .radio-field input[type="radio"]{
+  height: 15px;
+  width: 15px;
+}

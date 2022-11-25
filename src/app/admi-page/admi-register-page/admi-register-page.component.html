@@ -1,0 +1,414 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+
+<div class="container">
+  <header>Enregistrement</header>
+
+  <form [formGroup]="registerForm">
+    <div class="form first">
+      <div class="photo">
+        <span class="title">Photographie</span>
+        <div class="fields">
+
+          <div class="crop">
+            <div class="input-fields" >
+              <input type="file" (change)="fileChangeEvent($event)" />
+
+              <image-cropper class="img-crop" *ngIf="imageChangedEvent"
+                             [imageChangedEvent]="imageChangedEvent"
+                             [maintainAspectRatio]="true"
+                             [aspectRatio]="1 / 1"
+                             [resizeToWidth]="600"
+                             [resizeToHeight]="600"
+                             format="png"
+                             (imageCropped)="imageCropped($event)"
+                             (imageLoaded)="imageLoaded()"
+                             (cropperReady)="cropperReady()"
+                             (loadImageFailed)="loadImageFailed()"
+              ></image-cropper>
+
+
+            </div>
+          </div>
+          <div class="input-fields">
+            <img class="preview-crop" [src]="croppedImage" />
+          </div>
+        </div>
+      </div>
+      <div class="details personal">
+        <span class="title">Détails Personnels</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label>Nom</label>
+            <input type="text" placeholder="Entrer votre nom" formControlName="nom">
+          </div>
+          <div class="input-field">
+            <label>Postnom</label>
+            <input type="text" placeholder="Entrer votre postnom" formControlName="postnom">
+          </div>
+          <div class="input-field">
+            <label>Prenom</label>
+            <input type="text" placeholder="Entrer votre prenom" formControlName="prenom">
+          </div>
+          <div class="input-field">
+            <label>Ville de naissance</label>
+            <input type="text" placeholder="Entrer votre ville de naissance" formControlName="villeNais">
+          </div>
+          <div class="input-field">
+            <label>Date de naissance</label>
+            <input type="date" placeholder="Entrer votre date de naissance" formControlName="dateNais">
+          </div>
+          <div class="input-field">
+            <label>Sexe</label>
+            <select formControlName="sexe">
+              <option disabled selected>Selectionner votre sexe</option>
+              <option>Homme</option>
+              <option>Femme</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Profession</label>
+            <input type="text" placeholder="Entrer votre profession" formControlName="profession">
+          </div>
+          <div class="input-field">
+            <label>Niveau d'étude</label>
+            <select formControlName="niveauEtude">
+              <option disabled selected>Selectionner votre niveau d'étude</option>
+              <option>Aucun</option>
+              <option>Baccalauréat</option>
+              <option>Graduat</option>
+              <option>Licence</option>
+              <option>Master</option>
+              <option>Doctorat</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Pays d'admissibilité</label>
+            <input type="text" placeholder="Entrer votre pays d'admissibilité" formControlName="paysAd">
+          </div>
+
+        </div>
+      </div>
+      <div class="details Exemptation">
+        <span class="title">Exemptation De Passport</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Exemptation de passport</label>
+            <select required formControlName="exemPas">
+              <option disabled>Etes-vous exempter du passport?</option>
+              <option>Oui</option>
+              <option selected>Non</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="formUsed$ | async as formUsed">
+      <div class="details ID" *ngIf="formUsed.exemPas == 'Non' || formUsed == false">
+        <span class="title">Détails Passport</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label>Nom</label>
+            <input type="text" placeholder="Entrer le nom" required formControlName="nomPas">
+          </div>
+
+          <div class="input-field">
+            <label>Postnom</label>
+            <input type="text" placeholder="Entrer le postnom" required formControlName="postnomPas">
+          </div>
+
+          <div class="input-field">
+            <label>Prénom</label>
+            <input type="text" placeholder="Entrer le prénom" required formControlName="prenomPas">
+          </div>
+
+          <div class="input-field">
+            <label>Pays d'autorité d'émission</label>
+            <input type="text" placeholder="Entrer le Pays d'autorité d'émission" required formControlName="paysPas">
+          </div>
+
+          <div class="input-field">
+            <label>Date de délivrance</label>
+            <input type="date" placeholder="Entrer la date de délivrance" required formControlName="dateDelPas">
+          </div>
+
+          <div class="input-field">
+            <label>Date d'expiration</label>
+            <input type="date" placeholder="Entrer la date d'expiration" required formControlName="dateExPas">
+          </div>
+          <div class="input-field">
+            <label>Numéro de passport</label>
+            <input type="number" placeholder="Entrer la numéro de passport" min="1000" required formControlName="numeroPas">
+          </div>
+        </div>
+      </div>
+      <div class="details Exemption" *ngIf="formUsed.exemPas === 'Oui'">
+        <span class="title" >Détails Exemptation</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Type d'exemptation</label>
+          </div>
+          <div class="radio">
+            <div class="radio-field">
+              <input type="radio" id="1" name="typeExempPas" value="apatride" formControlName="typeExempPas">
+              <label for="1"><span>Apatride (N'ayant pas de nationalité propre)</span></label>
+            </div>
+            <div class="radio-field">
+              <input type="radio" id="2" name="typeExempPas" value="ressortissant d'un pays communiste" formControlName="typeExempPas">
+              <label for="2"><span>Ressortissant d'un pays controlé par le communiste et
+              incapable d'obtenir un passport de mon gouvernement</span></label>
+            </div>
+            <div class="radio-field">
+              <input type="radio" id="3" name="typeExempPas" value="dérogation individuelle" formControlName="typeExempPas">
+              <label for="3"><span>Impossible d'obtenir un passport et ont reçu une
+              dérogation individuelle à l'obligation de passport de la part du secrétaire intérieure
+              ou du secrétaire d'Etat</span></label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="details Residence">
+        <span class="title">Détails Résidence</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Commune</label>
+            <input type="text" placeholder="Entrer votre commune" required formControlName="communeRes">
+          </div>
+          <div class="input-field">
+            <label>Quartier</label>
+            <input type="text" placeholder="Entrer votre quartier"required formControlName="quartierRes">
+          </div>
+          <div class="input-field">
+            <label>Avenue</label>
+            <input type="text" placeholder="Entrer votre avenue" required formControlName="avenueRes">
+          </div>
+          <div class="input-field">
+            <label>Numero</label>
+            <input type="number" placeholder="Entrer votre numero" min="1" required formControlName="numeroRes">
+          </div>
+          <div class="input-field">
+            <label>Ville/province</label>
+            <input type="text" placeholder="Entrer votre ville" required formControlName="villeRes">
+          </div>
+          <div class="input-field">
+            <label>Pays de résidence</label>
+            <input type="text" placeholder="Entrer votre pays de résidence" required formControlName="paysRes">
+          </div>
+        </div>
+      </div>
+      <div class="details Contact">
+        <span class="title">Moyens De Contact</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Numero téléphonique</label>
+            <input type="tel" placeholder="Entrer votre Numero de téléphone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="numeroTel" required>
+          </div>
+          <div class="input-field">
+            <label>Email</label>
+            <input type="email" placeholder="Entrer votre Email" required formControlName="email">
+          </div>
+          <div class="input-field">
+            <label>Confirmation Email</label>
+            <input type="email" placeholder="Confirmer votre Email" required formControlName="emailConf">
+          </div>
+        </div>
+      </div>
+      <div *ngIf="true">
+      <div class="details nbrEnfant">
+        <span class="title">Details Sur Le Nombre d'Enfant</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Nombre d'enfant</label>
+            <input type="number" placeholder="Entrer le nombre d'enfant" formControlName="nbrEnfant" min="0" required>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="formUsed$ | async as formUsed" formArrayName="children">
+
+        <div class="details Enfants" *ngFor="let i of [].constructor(formUsed.nbrEnfant); let index = index ">
+          <div  *ngFor="let child of children.controls; let enfant = index">
+          <span class="title">Details Sur L'Enfant {{enfant + 1}}</span>
+            <div class="photo">
+              <span class="title">Photographie</span>
+              <div class="fields">
+
+                <div class="crop">
+                  <div class="input-fields" >
+                    <input type="file" (change)="fileChangeEvent($event)" />
+
+                    <image-cropper class="img-crop" *ngIf="imageChangedEvent"
+                                   [imageChangedEvent]="imageChangedEvent"
+                                   [maintainAspectRatio]="true"
+                                   [aspectRatio]="1 / 1"
+                                   [resizeToWidth]="600"
+                                   [resizeToHeight]="600"
+                                   format="png"
+                                   (imageCropped)="imageCropped($event)"
+                                   (imageLoaded)="imageLoaded()"
+                                   (cropperReady)="cropperReady()"
+                                   (loadImageFailed)="loadImageFailed()"
+                    ></image-cropper>
+
+
+                  </div>
+                </div>
+                <div class="input-fields">
+                  <img class="preview-crop" [src]="croppedImage" />
+                </div>
+              </div>
+            </div>
+          <div class="fields" [formGroupName]="enfant">
+            <div class="input-field">
+              <label>Nom</label>
+              <input type="text" placeholder="Entrer le nom" required formControlName="nomChild">
+            </div>
+            <div class="input-field">
+              <label>Postnom</label>
+              <input type="text" placeholder="Entrer le postnom" required formControlName="postnomChild">
+            </div>
+            <div class="input-field">
+              <label>Prenom</label>
+              <input type="text" placeholder="Entrer le prenom" required formControlName="prenomChild">
+            </div>
+            <div class="input-field">
+              <label>Lieu de naissance</label>
+              <input type="text" placeholder="Entrer le lieu de naissance" required formControlName="villeNaisChild">
+            </div>
+            <div class="input-field">
+              <label>Date de naissance</label>
+              <input type="date" placeholder="Entrer la date de naissance" required formControlName="dateNaisChild">
+            </div>
+            <div class="input-field">
+              <label>Sexe</label>
+              <select required formControlName="sexeChild">
+                <option disabled selected>Selectionner votre sexe</option>
+                <option>Homme</option>
+                <option>Femme</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class="details matrimonial" >
+        <span class="title">Detail Matrimonial</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Etat civil</label>
+            <select required formControlName="etatCivil">
+              <option disabled >Etes-vous marié?</option>
+              <option>Marier</option>
+              <option selected>Célibataire</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="formUsed$ | async as formUsed">
+      <div class="details Conjoint" *ngIf="formUsed.etatCivil == 'Marier'">
+        <span class="title">Details Conjoint(e)</span>
+        <div class="photo">
+          <span class="title">Photographie</span>
+          <div class="fields">
+
+            <div class="crop">
+              <div class="input-fields" >
+                <input type="file" (change)="fileChangeEvent($event)" />
+
+                <image-cropper class="img-crop" *ngIf="imageChangedEvent"
+                               [imageChangedEvent]="imageChangedEvent"
+                               [maintainAspectRatio]="true"
+                               [aspectRatio]="1 / 1"
+                               [resizeToWidth]="600"
+                               [resizeToHeight]="600"
+                               format="png"
+                               (imageCropped)="imageCropped($event)"
+                               (imageLoaded)="imageLoaded()"
+                               (cropperReady)="cropperReady()"
+                               (loadImageFailed)="loadImageFailed()"
+                ></image-cropper>
+
+
+              </div>
+            </div>
+            <div class="input-fields">
+              <img class="preview-crop" [src]="croppedImage" />
+            </div>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="input-field">
+            <label>Nom</label>
+            <input type="text" placeholder="Entrer votre nom" required formControlName="nomConj">
+          </div>
+          <div class="input-field">
+            <label>Postnom</label>
+            <input type="text" placeholder="Entrer votre postnom" required formControlName="postnomConj">
+          </div>
+          <div class="input-field">
+            <label>Prenom</label>
+            <input type="text" placeholder="Entrer votre prenom" required formControlName="prenomConj">
+          </div>
+          <div class="input-field">
+            <label>Nationalité</label>
+            <input type="text" placeholder="Entrer votre nationalité" required formControlName="nationaliteConj">
+          </div>
+          <div class="input-field">
+            <label>Sexe</label>
+            <select required formControlName="sexeConj">
+              <option disabled selected>Selectionner votre sexe</option>
+              <option>Homme</option>
+              <option>Femme</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Date de naissance</label>
+            <input type="date" placeholder="Entrer votre date de naissance" required formControlName="dateNaisConj">
+          </div>
+          <div class="input-field">
+            <label>Profession</label>
+            <input type="text" placeholder="Entrer votre profession" required formControlName="professionConj">
+          </div>
+          <div class="input-field">
+            <label>Niveau d'étude</label>
+            <select required formControlName="nivEtudeConj">
+              <option disabled selected>Selectionner votre niveau d'étude</option>
+              <option>Aucun</option>
+              <option>Baccalauréat</option>
+              <option>Graduat</option>
+              <option>Licence</option>
+              <option>Master</option>
+              <option>Doctorat</option>
+            </select>
+          </div>
+          <div class="input-field">
+
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="details Agent">
+        <span class="title">Details Sur Agent</span>
+        <div class="fields" *ngIf="agent$ | async as agent">
+          <div class="input-field" >
+            <label>Nom agent</label>
+            <select required formControlName="nomAgent">
+              <option disabled selected>Choisi le nom de l'agent</option>
+              <option *ngFor="let i of [].constructor(agent.length); let index = index ">{{agent[index].nom}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="nextBtn" (click)="onSubmitForm()" >
+        <span class="btnText">Enregistrer</span>
+        <i class="fa-solid fa-arrow-right-long"></i>
+      </button>
+    </div>
+
+  </form>
+</div>
+
+</body>
