@@ -1,0 +1,39 @@
+
+<body>
+<header>
+    <div class="logo">
+      243 <span>DV LOTTERY</span>
+      <i class="fa-solid fa-plane-departure"></i>
+    </div>
+  <div class="main">
+
+    <div class="zoneText">
+      <h1>DV Lottery 2024.</h1>
+      <div></div>
+      <h2>Jouez Plus <span>Facilement</span></h2>
+      <p>
+        Entrez juste ces simples informations afin de vous enregistrer et on se charge du reste.
+        Nous vous contacterons ulterieurement pour vous donner plus d'information et compléter votre dossier.
+      </p>
+      <br>
+    </div>
+
+  <div class="box">
+    <h2>Enregistrez-vous</h2>
+    <form [formGroup]="landingForm">
+      <input type="text" formControlName="nom" placeholder="Votre Nom">
+      <input type="text" formControlName="postnom" placeholder="Votre Postnom">
+      <input type="text" formControlName="nom" placeholder="Votre Prenom">
+      <input type="text" formControlName="email" placeholder="Votre Adresse Email">
+      <input type="text" formControlName="tel" placeholder="Votre Numero de téléphone">
+      <input type="submit" name="" value="Enregistrer" (click)="onClick()">
+      <br>
+      <p><span (click)="onAgent()">Etes-vous un agent ?</span></p>
+
+    </form>
+  </div>
+
+  </div>
+</header>
+</body>
+

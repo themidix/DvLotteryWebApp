@@ -1,0 +1,81 @@
+
+  <div class="container">
+  <header>Enregistrement Agent</header>
+  <form [formGroup]="registerAgentForm">
+    <div class="form first">
+      <div class="details personal">
+        <span class="title">Détails Personnels</span>
+
+        <div class="fields">
+          <div class="input-field">
+            <label>Nom Complet</label>
+            <input type="text" placeholder="Entrer le nom complet" required formControlName="nom">
+          </div>
+          <div class="input-field">
+            <label>Email</label>
+            <input type="text" placeholder="Entrer l'adresse email" required formControlName="email">
+          </div>
+          <div class="input-field">
+            <label>Numero</label>
+            <input type="tel" placeholder="Entrer le numero de téléphone" required formControlName="tel">
+          </div>
+          <div class="input-field">
+            <label>Sexe</label>
+            <select required formControlName="sexe">
+              <option disabled selected>Selectionner le sexe</option>
+              <option>Homme</option>
+              <option>Femme</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="details professionels">
+        <span class="title">Détails Professionels</span>
+        <div class="fields">
+          <div class="input-field">
+            <label>Ville</label>
+            <input type="text" placeholder="Entrer la ville de travail" required formControlName="ville">
+          </div>
+          <div class="input-field">
+            <label>Date d'embauche</label>
+            <input type="date" placeholder="Entrer la date d'embauche" required formControlName="dateEmb">
+          </div>
+          <div class="input-field">
+            <label>Fonction</label>
+            <select required formControlName="fonction">
+              <option disabled selected>Selectionner la fonction de l'agent</option>
+              <option>Data Entry</option>
+              <option>Caller</option>
+              <option>Administrator</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Statut</label>
+            <select required formControlName="statut">
+              <option disabled selected>Selectionner le statut de l'agent</option>
+              <option>Actif</option>
+              <option>Non Actif</option>
+            </select>
+          </div>
+          <div class="input-field">
+            <label>Mot de passe</label>
+            <input type="text" placeholder="Entrer le mot de passe" required formControlName="passWord">
+          </div>
+        </div>
+      </div>
+
+      <div class="button-bottom">
+        <button class="nextBtn" mat-button mat-dialog-close (click)="onClick()">
+          <span class="btnText">Enregistrer</span>
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+        <button class="nextBtn" mat-button [mat-dialog-close]="true">
+          <span class="btnText">Annuler</span>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </form>
+  </div>

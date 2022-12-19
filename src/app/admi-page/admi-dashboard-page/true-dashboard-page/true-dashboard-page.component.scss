@@ -1,0 +1,16 @@
+
+body{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),
+  url('../../../../assets/Banner2.jpg');
+  background-size: cover;
+  position: relative;
+  padding-top: 50px;
+}
+
+.card{
+  width: 85%;
+  margin: auto;
+  background-color: rgba(255,255,255,0.5);
+}

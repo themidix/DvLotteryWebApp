@@ -1,0 +1,256 @@
+*{padding: 0; margin:0; box-sizing: border-box; font-family: sans-serif;}
+header{
+  font-family: sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.6)),
+  url('../../assets/Banner2.jpg');
+  background-size: cover;
+  position: relative;
+}
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  padding-top: 2%;
+  margin: 0 auto;
+}
+@media(min-width:810px){
+  .logo{
+    font-size: 4em;
+  }
+ .box{
+   width: 35%;
+ }
+  .zoneText{
+    width: 50%;
+  }
+}
+@media  screen and (max-width:850px){
+
+  .zoneText span{
+    font-size: 0.5em;
+  }
+
+  .logo{
+    font-size: 3em;
+  }
+
+  .header{
+    width: 80%;
+    line-height: 1%;
+    text-align: center;
+    margin: auto;
+  }
+  .main{
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+    padding-bottom: 5%;
+  }
+  .zoneText{
+    width: 80%;
+    font-size: 0.6em;
+  }
+
+  .zoneText p{
+    font-size: 1.1em;
+  }
+
+  .box{
+    width: 80%;
+    overflow: hidden;
+  }
+}
+
+.logo{
+  color: white;
+  letter-spacing: 2px;
+  margin: auto;
+  color: #DE2E4B;
+  font-family: Dosis;
+  font-weight: bold;
+  text-align: center;
+}
+
+.logo span{
+  font-size: 0.7em;
+  color: white;
+  font-family: JosefinSans;
+  font-weight: bold;
+}
+
+.logo i{
+  color:#DE2E4B;
+  padding-left: 1%;
+  font-size: 0.6em;
+}
+
+.box{
+  background: rgba(255,255,255, 0.5);
+  height: 510px;
+  padding: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+form{
+  width: 100%;
+}
+form input[type="text"]{
+  width: 100%;
+  background: rgba(255,255,255, 0.2);
+  padding: 15px;
+  margin-bottom: 13px;
+  outline: none;
+  border: 1px solid rgba(0,0,0, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+form input[type="text"]::placeholder{
+  color: black;
+  font-family: JosefinSans;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+form input[type="text"]:focus{
+  border: 1px solid #DE2E4B;
+}
+
+form input[type="submit"]{
+  font-family: Dosis;
+  width: 100%;
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  outline: none;
+  border:none;
+  background:#DE2E4B;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+form input[type="submit"]:hover{
+  background: transparent;
+  border:1px solid grey;
+  color: black;
+}
+.box span{
+  color: black;
+  cursor: pointer;
+  font-family: JosefinSans;
+  transition: .5s;
+}
+
+.box span:hover{
+  color: #DE2E4B;
+}
+
+.box p{
+  line-height: 1em;
+  font-family: JosefinSans;
+}
+
+.box p {
+  text-align: center;
+  font-size: 15px;
+  color: rgba(0,0,0,0.8);
+}
+
+.box h2{
+  text-align: center;
+  font-family: JosefinSans;
+  font-size: 30px;
+}
+
+.zoneText{
+  color: white;
+  overflow: hidden;
+}
+.zoneText h1{
+  overflow: hidden;
+  font-size: 2.4em;
+  font-family: Dosis;
+
+}
+.zoneText h2{
+  overflow: hidden;
+  line-height: 1.2em;
+  padding-top: 3%;
+  font-size: 4em;
+  font-family: JosefinSans;
+}
+.zoneText span{
+  overflow: hidden;
+  font-size: 1.2em;
+  line-height: 1em;
+  color: #DE2E4B;
+  font-family: JosefinSans;
+}
+.zoneText p{
+  overflow: hidden;
+  font-size: 1em;
+  margin: 15px 0;
+  line-height: 2em;
+  font-family: JosefinSans;
+}
+.zoneText a{
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border:1px solid white;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+.zoneText a:hover{
+  background: #DE2E4B;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

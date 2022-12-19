@@ -1,0 +1,22 @@
+
+<body>
+<div class="main">
+  <div class="logo">
+    243 <span>DV LOTTERY</span>
+    <i class="fa-solid fa-plane-departure"></i>
+  </div>
+  <div class="box">
+    <h2>Connexion</h2>
+    <form [formGroup]="loginForm">
+
+      <input type="text" formControlName="email" placeholder="Votre Adresse Mail">
+      <input type="password" formControlName="password" placeholder="Votre Mot De Passe">
+
+      <input type="submit" name="" value="Se connecter" (click)="onSubmit()" [disabled]="loginForm.invalid">
+      <br>
+      <p><span (click)="onLanding()">Vous n'etes pas un agent ?</span></p>
+
+    </form>
+  </div>
+</div>
+</body>
