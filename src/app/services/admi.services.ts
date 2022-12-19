@@ -10,6 +10,7 @@ import {Agent} from "../models/agent.model";
 export class AdmiServices {
   constructor(private http : HttpClient) {
   }
+  //actualiser
 
   getAllCustomers() : Observable<Customer[]>{
     return this.http.get<Customer[]>('http://localhost:8080/customer');
